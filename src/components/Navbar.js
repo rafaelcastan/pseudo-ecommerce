@@ -7,7 +7,7 @@ import ButtonContainer from './Button'
 class Navbar extends Component {
     render() {
         return (
-            <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+            <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5 sticky-top">
                 <Link to="/">
                     <img src={logo} alt="GameStore"
                     className="navbar-brand"/>
@@ -22,16 +22,18 @@ class Navbar extends Component {
                 <Link to="/cart" className="ml-auto">
                 <ButtonContainer>
                     <span className="mr-2">
-                        Cart
+                    <img  className="cartIcon" src="assets/cart-icon.svg"/>Cart
                     </span>
                 </ButtonContainer>
                 </Link>
+                
             </NavWrapper>
         );
     }
 }
 
 const NavWrapper = styled.nav`
+    position:sticky;
     background:var(--mainBlue);
     .nav-link{
         color: var(--mainWhite) !important;
@@ -43,6 +45,9 @@ const NavWrapper = styled.nav`
     }
     .navbar-brand{
         height: 4.5rem;
+    }
+    .cartIcon{
+        height:1.9rem;
     }
 `
 

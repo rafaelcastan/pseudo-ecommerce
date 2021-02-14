@@ -9,18 +9,21 @@ class ProductsList extends Component {
             <React.Fragment>
                 <div className="py-5">
                     <div className="container">
-                            <Title name="our" title="products"></Title>
+                            <Title name="our" title="games"></Title>
                             <div className="row">
                                 <ProductConsumer>
-                                    {(hello)=>{
-                                        return <h1>{hello}</h1>
+                                    {(value)=>{
+                                       return value.products.map(product=>{
+                                           return <Product key={product.id} product={product}/>
+                                       })
                                     }}
                                 </ProductConsumer>
                         </div>
                     </div>    
                 </div>
-                <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from 
+                <div className="IconsAuthor">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from 
                 <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
             </React.Fragment>
         );
     }

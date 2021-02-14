@@ -3,7 +3,7 @@
   --lightBlue:#009ffd;
   --mainWhite: #f3f3f3;
   --mainDark:#232528;
-  --mainYellow:#ffa400;
+  --mainYellow:#ffcc6d;
 }
 
 body{
@@ -26,3 +26,9 @@ body{
   color: var(--lightBlue);
 }
 
+.IconsAuthor{
+  position:fixed;
+	bottom: 0;
+  padding-bottom: 0.05rem;
+  left: 0.5rem
+}
