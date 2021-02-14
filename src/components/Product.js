@@ -8,13 +8,19 @@ class Product extends Component {
         return (
             <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                 <div className="card">
+                    <ProductConsumer>
+                        {/*Using Consumer to make changes in context state*/}
+                        {value=>{
+                            return(
                     <div className="img-container p-5">
                         <img src={"assets/"+image} alt={name} className="card-img-top"/>
-                        <i class="score fas fa-star">{score}</i>
-                        <button className="cart-btn" onClick={() => {console.log(id)}}>
+                        <i className="score fas fa-star">{score}</i>
+                        <button className="cart-btn" onClick={() => {value.addToCart(id)}}>
                         <img className="btn-image" src="assets/cart-icon.svg"/>
                         </button>
                     </div>
+                            )}}
+                    </ProductConsumer>
                     <div className="card-footer d-flex justify-content-between">
                         <p className="alig-self-center mb-0 text-center">{name}</p>
                         <h5 className="text-blue font-italic mb-0">
@@ -30,12 +36,12 @@ class Product extends Component {
 const ProductWrapper = Styled.div`
     .card{
         border-color:transparent;
-        transition: all 1s linear;
+        transition: all 0.5s linear;
     }
     .card-footer{
         background: transparent;
         border-top: transparent;
-        transition: all 1s linear;
+        transition: all 0.5s linear;
     }
     &:hover{
         .card{
@@ -51,7 +57,7 @@ const ProductWrapper = Styled.div`
         overflow:hidden;
     }
     .card-img-top{
-        transition: all 1s linear;
+        transition: all 0.5s linear;
         transform:scale(1.1);
     }
     .img-container:hover .card-img-top{
@@ -73,7 +79,7 @@ const ProductWrapper = Styled.div`
         font-size:1.4rem;
         border-radius: 0.5rem 0 0 0;
         transform:translate(100%);
-        transition: all 1s linear;
+        transition: all 0.5s linear;
     }
     .img-container:hover .cart-btn{
         transform:translate(0,0);

@@ -11,7 +11,8 @@ class ProductsList extends Component {
                     <div className="container">
                             <Title name="our" title="games"></Title>
                             <div className="row">
-                                <ProductConsumer>
+                                <ProductConsumer> 
+                                    {/*Using Consumer to get products from context state*/}
                                     {(value)=>{
                                        return value.products.map(product=>{
                                            return <Product key={product.id} product={product}/>
