@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-function CartItem ({item,value,actualIndex}) {
+function CartItem ({item,value}) {
     const{id,name,image,price}=item;
-    const{cartTotal, removeItem, addToCart, deleteItem} = value;
+    const{removeItem, addToCart, deleteItem} = value;
+    let actualIndex = value.getQuantityIndex(id);
     const quantity = value.quantity[actualIndex].quantity;
-    const totalItemValue = quantity*price;
+    const totalItemValue = (quantity*price).toLocaleString({minimumFractionDigits: 2});
     return (
         <div className="row my-2 text-capitalize text-center">
-            <div className="col-10 mx-auto col-lg-2">
+            <div className="cart-img col-10 mx-auto col-lg-2">
                 <img src={"assets/"+image} style={{width:'5rem',height:"5rem"}}
                 className="img-fluid" alt={name}
                 />

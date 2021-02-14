@@ -52,3 +52,12 @@ body{
   font-size:1.2rem;
   color:var(--mainYellow);
 }
+
+#dropdown-basic{
+  background-color: var(--mainBlue);
+  border-color: var(--mainBlue);
+}
+
+#filter-background{
+  box-shadow: none;
+}

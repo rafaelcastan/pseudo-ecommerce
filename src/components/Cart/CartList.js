@@ -6,7 +6,7 @@ function CartList ({value}) {
     return (
         <div className="container-fluid">
             {cart.map((item,index)=>{
-                return<CartItem key={index} item={item} value={value} actualIndex={index}/>
+                return<CartItem key={index} item={item} value={value}/>
             })}
         </div>
     );
