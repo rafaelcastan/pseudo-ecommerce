@@ -8,7 +8,6 @@ import ProductsList from './components/ProductsList'
 import Cart from './components/Cart'
 import Default from './components/Default'
 
-
 class App extends Component {
   render(){
     return(
